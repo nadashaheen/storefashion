@@ -74,12 +74,6 @@ class frontsideController extends Controller
     }
 
 
-    public function signin()
-    {
-
-        return view('frontsite.signin');
-
-    }
 
     public function pre_index()
     {

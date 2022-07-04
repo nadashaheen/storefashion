@@ -12,10 +12,7 @@
                         <li><a href="{{route('categories')}}">Categoies</a></li>
                         <li><a href="{{route('about')}}">About</a></li>
                         <li><a href="{{route('contact')}}">Contact</a></li>
-                        <li><a href="{{route('logout')}}">
-                            <i class="{{asset('fa fa-sign-out-alt')}}"></i>
-                            </a></li>
-
+                        <li  class="active"  ><a style=" font-weight: bold" href="{{route('user_logout')}}"> logout  </a>  </li>
                     </ul>
                 </div>
             </div>

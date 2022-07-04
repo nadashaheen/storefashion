@@ -7,6 +7,7 @@ use \App\Http\Controllers\admin\dashboardController;
 use \App\Http\Controllers\admin\UserController;
 use \App\Http\Controllers\admin\CategoryController;
 use \App\Http\Controllers\frontsideController;
+use \App\Http\Controllers\AuthController;
 
 /*
 |--------------------------------------------------------------------------
@@ -30,9 +31,10 @@ Route::prefix('admin')->middleware('auth:webadmin')->group(function () {
 
 });
 
-Route::get('/login', [AdminController::class, 'login'])->name('login');
-Route::get('/logout', [AdminController::class, 'logout'])->name('logout');
-Route::post('/authenticate', [AdminController::class, 'authenticate'])->name('authenticate');
+Route::get('/login', [AuthController::class, 'login'])->name('login');
+Route::get('/logout', [AuthController::class, 'logout'])->name('logout');
+Route::get('/user_logout', [AuthController::class, 'user_logout'])->name('user_logout');
+Route::post('/authenticate', [AuthController::class, 'authenticate'])->name('authenticate');
 
 Route::get('/', [frontsideController::class, 'showhome'])->middleware('auth:web');
 
@@ -50,6 +52,9 @@ Route::get('/clothes', [frontsideController::class, 'showclothes'])->name('cloth
 
 
 });
-Route::post('/signin', [frontsideController::class, 'signin'])->name('signin');
+Route::get('/register', [UserController::class, 'register'])->name('register');
+Route::post('/do_register', [UserController::class, 'do_register'])->name('do_register');
+Route::get('/signin', [AuthController::class, 'signin'])->name('signin');
+Route::post('/do_signin', [AuthController::class, 'do_signin'])->name('do_signin');
 Route::get('/pre_index', [frontsideController::class, 'pre_index'])->name('pre_index');
 

@@ -69,7 +69,7 @@
                     </div>
                     <div class="col-xs-10 text-right menu-1">
                         <ul>
-                            <li><a href="{{route('user.create')}}"> Sgin Up</a></li>
+                            <li><a href="{{route('register')}}"> Sgin Up</a></li>
                             <li><a href="{{route('signin')}}"> Sgin In</a></li>
                         </ul>
                     </div>

@@ -17,37 +17,36 @@ class AdminController extends Controller
      * @return \Illuminate\Http\Response
      */
 
-    public function login()
-    {
-        $url = url()->previous() ;
-        $uri_segments = explode('/', $url);
-
-
-        if ($uri_segments[count($uri_segments)-1] == 'admin') {
-            return view('admin.admin.login');
-        }
-
-            return view('frontsite.pre_index');
-
-    }
-
-    public function logout()
-    {
-        if (Auth::guard('webadmin')->check()) {
-            Auth::guard('webadmin')->logout();
-            return redirect()->route('login');
-        }
-
-    }
-
-    public function authenticate(Request $request)
-    {
-        $login_data = ['email' => $request->email, 'password' => $request->password];
-        if (Auth::guard('webadmin')->attempt($login_data)) {
-            return redirect()->route('dashboard');
-        }
-        return redirect()->back()->with('error', 'invalid username or password');
-    }
+//    public function login()
+//    {
+//        $url = url()->previous() ;
+//        $uri_segments = explode('/', $url);
+//
+//        if ($uri_segments[count($uri_segments)-1] == 'admin') {
+//            return view('admin.admin.login');
+//        }
+//
+//            return view('frontsite.pre_index');
+//
+//    }
+//
+//    public function logout()
+//    {
+//        if (Auth::guard('webadmin')->check()) {
+//            Auth::guard('webadmin')->logout();
+//            return redirect()->route('login');
+//        }
+//
+//    }
+//
+//    public function authenticate(Request $request)
+//    {
+//        $login_data = ['email' => $request->email, 'password' => $request->password];
+//        if (Auth::guard('webadmin')->attempt($login_data)) {
+//            return redirect()->route('dashboard');
+//        }
+//        return redirect()->back()->with('error', 'invalid username or password');
+//    }
 
     public function index()
     {

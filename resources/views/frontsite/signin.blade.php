@@ -296,7 +296,9 @@
 
     <div class="form sign-in">
         <h2>Welcome back</h2>
-        <form action="" method="POST">
+        <form action="{{route('do_signin')}}" method="POST">
+            @include('admin.layout.masseges')
+            @csrf
             <label>
                 <span>Email</span>
                 <input type="email" name="email"/>
@@ -313,7 +315,7 @@
         </form>
     </div>
 
-    <a href="{{route('user.create')}}">
+    <a href="{{route('register')}}">
         <div class="sub-cont">
             <div class="img">
                 <div class="img__text m--up">

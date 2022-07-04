@@ -5,15 +5,14 @@
         <div class="container">
             <div class="row">
                 <div class="col-md">
-                    <form action="{{--route('user.store')--}}" method="POST" class="colorlib-form">
+                    <form action="{{route('do_register')}}" method="POST" class="colorlib-form">
                         @csrf
-                        @method('PUT')
                         <h1>Sgin Up </h1>
                         <div class="row" >
                             <div class="form-group">
                                 <div class="col-md-12">
                                     <label for="fname">User Name </label>
-                                    <input type="text" id="fname" name="username" class="form-control" placeholder="Enter Your Name">
+                                    <input type="text" id="fname" name="name" class="form-control" placeholder="Enter Your Name">
                                 </div>
                             </div>
 
