@@ -117,7 +117,7 @@
                     <div class="col-md-3 text-center">
                         <div class="product-entry">
                             <div class="product-img"
-                                 style="background-image: url({{asset('clothes_image/'.$clo->image_name)}});">
+                                 style="background-image:url({{asset('clothes_image/'.$clo->image_name)}});">
                             </div>
                             <div class="desc">
                                 <h3><a href="{{route('detail' , $clo->id)}}">{{$clo->title}}</a></h3>
