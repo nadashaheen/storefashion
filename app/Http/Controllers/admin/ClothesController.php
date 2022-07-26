@@ -78,7 +78,7 @@ class ClothesController extends Controller
 
         if ($request->image_name != null) {
             $clothes_image = $request->file('image_name');
-            $file_name = $clothes->title . time() . '.' . $clothes_image->extension();
+            $file_name = $clothes->id . time() . '.' . $clothes_image->extension();
             $clothes_image->move('clothes_image', $file_name);
             $clothes->image_name = $file_name;
         }
@@ -131,7 +131,7 @@ class ClothesController extends Controller
 
         if ($request->image_name != null) {
             $clothes_image = $request->file('image_name');
-            $file_name = $clothes->title . time() . '.' . $clothes_image->extension();
+            $file_name = $clothes->id . time() . '.' . $clothes_image->extension();
             $clothes_image->move('clothes_image', $file_name);
             $clothes->image_name = $file_name;
         }
